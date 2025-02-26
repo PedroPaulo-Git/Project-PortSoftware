@@ -13,3 +13,11 @@ body {
   color: var(--foreground);
   background: var(--background);
 }
+/* Efeito Neon com Animação */
+.neon-button {
+  position: relative;
+  text-align: center;
+  box-shadow: 0 0 0px rgba(38, 132, 255, 0.7), 0 0 0px rgba(38, 132, 255, 0.7), 0 0 50px rgba(7, 53, 112, 0.7);
+  transition: transform 0.3s ease;
+}
+

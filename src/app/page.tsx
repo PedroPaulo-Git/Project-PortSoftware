@@ -1,37 +1,48 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { Dialog, DialogPanel } from '@headlessui/react'
+import { useState } from "react";
+import { Dialog, DialogPanel } from "@headlessui/react";
 import { Outfit } from "next/font/google";
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import Image from 'next/image'
-import img from '../assets/Logo.png';
-
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
+import img from "../assets/Logo.png";
+import Hero1 from "../assets/heroimage1.png";
+import Hero2 from "../assets/heroimage2.png";
+import Hero3 from "../assets/heroimage3.png";
+import Hero4 from "../assets/heroimage4.png";
+import Hero5 from "../assets/heroimage5.png";
+import SubHero from "@/components/SubHero";
 
 const navigation = [
-  { name: 'Product', href: '#' },
-  { name: 'Features', href: '#' },
-  { name: 'Marketplace', href: '#' },
-  { name: 'Company', href: '#' },
-]
+  { name: "Product", href: "#" },
+  { name: "Features", href: "#" },
+  { name: "Marketplace", href: "#" },
+  { name: "Company", href: "#" },
+];
 
 const outfit = Outfit({ subsets: ["latin"] });
 export default function Example() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <div className= {`${outfit.className} bg-darkCustom px-2 sm:px-20 text-white`}>
+    <div
+      className={`${outfit.className} bg-darkCustom px-2 sm:px-20 text-white`}
+    >
       <header className="absolute inset-x-0 top-0 z-50 border-b-[1px] border-[#1d1c1f] text-[#87858b] ">
-        <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
+        <nav
+          aria-label="Global"
+          className="flex items-center justify-between p-6 lg:px-8"
+        >
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-             <Image
-             src={img}
-             width={100}
-             alt=''
-             height={100}
-             className='pl-2 sm:pl-20 min-w-40'/>
+              <Image
+                src={img}
+                width={100}
+                alt=""
+                height={100}
+                className="pl-2 sm:pl-20 min-w-40"
+              />
             </a>
           </div>
           <div className="flex lg:hidden">
@@ -46,7 +57,11 @@ export default function Example() {
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
             {navigation.map((item) => (
-              <a key={item.name} href={item.href} className="text-sm/6 font-semibold ">
+              <a
+                key={item.name}
+                href={item.href}
+                className="text-sm/6 font-semibold "
+              >
                 {item.name}
               </a>
             ))}
@@ -57,18 +72,23 @@ export default function Example() {
             </a>
           </div>
         </nav>
-        <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
+        <Dialog
+          open={mobileMenuOpen}
+          onClose={setMobileMenuOpen}
+          className="lg:hidden"
+        >
           <div className="fixed inset-0 z-50" />
           <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
               <a href="#" className="-m-1.5 p-1.5">
                 <span className="sr-only">Your Company</span>
                 <Image
-             src={img}
-             width={100}
-             alt=''
-             height={100}
-             className='pl-2 sm:pl-20 min-w-40'/>
+                  src={img}
+                  width={100}
+                  alt=""
+                  height={100}
+                  className="pl-2 sm:pl-20 min-w-40"
+                />
               </a>
               <button
                 type="button"
@@ -105,7 +125,9 @@ export default function Example() {
           </DialogPanel>
         </Dialog>
       </header>
-                  
+<div className="pb-10">
+
+
       <div className="relative px-6 py-14 lg:px-8 md:flex sm:justify-between">
         <div
           aria-hidden="true"
@@ -114,47 +136,78 @@ export default function Example() {
           <div
             style={{
               clipPath:
-                'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+                "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
             }}
             className="relative left-[calc(50%-11rem)] aspect-1155/678 w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
           />
         </div>
-        <div className="max-w-2xl py-32 sm:py-40 lg:py-48">
+        <div className="max-w-2xl pt-32 sm:pt-40 lg:pt-48">
           <div className="hidden sm:flex ">
-            <div className="relative text-Blue_Primary font-semibold rounded-full py-1 text-lg  ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-            BEM-VINDO(A) À PORTSOFTWARE 
+            <div className="relative text-Blue_Primary font-semibold rounded-full py-1 text-base ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+              BEM-VINDO(A) À PORTSOFTWARE 👋
             </div>
           </div>
           <div className="">
             <h1 className="text-5xl font-normal tracking-tight text-balance  sm:text-7xl">
-            Desenvolvimento personalizado para sua empresa crescer
+              Desenvolvimento personalizado para sua empresa crescer
             </h1>
             {/* <p className="mt-8 text-lg font-medium text-pretty  sm:text-xl/8">
               Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
               fugiat veniam occaecat.
             </p> */}
             <div className="mt-10 text-left">
-            
               <a href="#" className="text-base text-grayCustom ">
-             <span aria-hidden="true"> ↓ </span>Continuar Explorando 
+                <span aria-hidden="true"> ↓ </span>Continuar Explorando
               </a>
             </div>
           </div>
         </div>
-        <div className='flex flex-col justify-center items-center max-w-48 text-left mr-28 mb-28'>
-        <h1 className="text-xl mb-8 ">
-           Fazemos a web diferente,todos os dias.
-            </h1>
-            <a href="#" className="font-semibold text-darkCustom bg-Blue_Primary p-2 w-full flex justify-center gap-1 ">
-             Vamos começar <span aria-hidden="true"> → </span>
-              </a>
+        <div className="flex flex-col justify-center items-center max-w-48 text-left mr-28 mb-28">
+          <h1 className="text-xl mb-8 ">
+            Fazemos a web diferente,todos os dias.
+          </h1>
+          <a
+            href="#"
+            className="neon-button font-semibold text-gray-900 bg-blue-600 p-4 w-full flex justify-center items-center gap-1"
+          >
+            Vamos começar <span aria-hidden="true"> → </span>
+          </a>
         </div>
-      
       </div>
+      <div className="flex gap-10 justify-center">
+       <Image
+       className="w-72 opacity-70 h-full"
+       alt=""
+       src={Hero1}
+       />
+  <Image
+       className="w-72 opacity-70 h-full"
+       alt=""
+       src={Hero2}
+       />
+  <Image
+       className="w-72 opacity-70 h-full"
+       alt=""
+       src={Hero3}
+       />
+  <Image
+       className="w-72 opacity-70 h-full"
+       alt=""
+       src={Hero4}
+       /> 
+       <Image
+       className="w-72 opacity-70 h-full"
+       alt=""
+       src={Hero5}
+       />
+
+      </div>
+      </div>
+
+      <SubHero/>
     </div>
-  )
+  );
 }
 function setMobileMenuOpen(arg0: boolean): void {
-  throw new Error('Function not implemented.');
+  throw new Error("Function not implemented.");
 }
-
