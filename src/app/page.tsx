@@ -12,6 +12,7 @@ import Hero3 from "../assets/heroimage3.png";
 import Hero4 from "../assets/heroimage4.png";
 import Hero5 from "../assets/heroimage5.png";
 import SubHero from "@/components/SubHero";
+import Tecnologias from "@/components/Tecnologias";
 
 const navigation = [
   { name: "Product", href: "#" },
@@ -205,9 +206,7 @@ export default function Example() {
       </div>
 
       <SubHero/>
+      <Tecnologias/>
     </div>
   );
-}
-function setMobileMenuOpen(arg0: boolean): void {
-  throw new Error("Function not implemented.");
 }

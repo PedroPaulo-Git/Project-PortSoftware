@@ -4,12 +4,11 @@ import Image from "next/image";
 import mySubHeroPng from "../assets/Subhero.png";
 import img from "../assets/Logo.png";
 const SubHero = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [divs, setDivs] = useState<number[]>([]);
+  const [activeIndex, setActiveIndex] = useState<number>(0);
 
-  const handleClick = (index: any) => {
+  const handleClick = (index: number) => {
     setActiveIndex(index);
-    setDivs((prev) => [...prev, index]);
+  
     console.log( index)
   };
   useEffect(()=>{
