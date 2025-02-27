@@ -13,6 +13,8 @@ import Hero4 from "../assets/heroimage4.png";
 import Hero5 from "../assets/heroimage5.png";
 import SubHero from "@/components/SubHero";
 import Tecnologias from "@/components/Tecnologias";
+import SlideTecnologias from "@/components/SlideTecnologias";
+
 
 const navigation = [
   { name: "Product", href: "#" },
@@ -27,9 +29,9 @@ export default function Example() {
 
   return (
     <div
-      className={`${outfit.className} bg-darkCustom px-2 sm:px-20 text-white`}
+      className={`${outfit.className} bg-darkCustom  text-white`}
     >
-      <header className="absolute inset-x-0 top-0 z-50 border-b-[1px] border-[#1d1c1f] text-[#87858b] ">
+      <header className="absolute inset-x-0 top-0 z-50 border-b-[1px] border-[#1d1c1f] text-[#87858b] px-20 ">
         <nav
           aria-label="Global"
           className="flex items-center justify-between p-6 lg:px-8"
@@ -126,7 +128,7 @@ export default function Example() {
           </DialogPanel>
         </Dialog>
       </header>
-<div className="pb-10">
+<div className="pb-10 px-20">
 
 
       <div className="relative px-6 py-14 lg:px-8 md:flex sm:justify-between">
@@ -207,6 +209,7 @@ export default function Example() {
 
       <SubHero/>
       <Tecnologias/>
+      <SlideTecnologias/>
     </div>
   );
 }

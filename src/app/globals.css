@@ -2,16 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-  font-family: var(--font-outfit), sans-serif;
+:root{
+  background-color: #edf2f4;
 }
-
 body {
-  
-  color: var(--foreground);
-  background: var(--background);
+ background-color: #edf2f4;
 }
 /* Efeito Neon com Animação */
 .neon-button {

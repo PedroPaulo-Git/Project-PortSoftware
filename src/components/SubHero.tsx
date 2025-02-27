@@ -15,7 +15,7 @@ const SubHero = () => {
     console.log(activeIndex.valueOf.length)
   },[])
   return (
-    <div className=" flex px-8 py-14">
+    <div className=" flex px-8 py-14 px-20">
       <div className="lg:w-[12%] border-r-[2px] border-grayCustom border-opacity-20 py-14">
         <Image src={img} width={100} alt="" height={100} className="" />
         <div className="list-none space-y-16 mt-20">
