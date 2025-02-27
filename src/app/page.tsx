@@ -14,6 +14,8 @@ import Hero5 from "../assets/heroimage5.png";
 import SubHero from "@/components/SubHero";
 import Tecnologias from "@/components/Tecnologias";
 import SlideTecnologias from "@/components/SlideTecnologias";
+import Portfolio from "@/components/Portfolio";
+import Footer from "@/components/Footer";
 
 
 const navigation = [
@@ -210,6 +212,8 @@ export default function Example() {
       <SubHero/>
       <Tecnologias/>
       <SlideTecnologias/>
+      <Portfolio/>
+      <Footer/>
     </div>
   );
 }

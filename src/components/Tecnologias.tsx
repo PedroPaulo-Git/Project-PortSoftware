@@ -10,56 +10,50 @@ import reactLogo from '../assets/react.png'
 import postgresqlLogo from '../assets/postgres.png'
 
 const Tecnologias = () => {
-const features = [
-  {
-    name: 'Push to deploy',
-    description:
-      'Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.',
-    icon: jsLogo,
-  },
-  {
-    name: 'SSL certificates',
-    description:
-      'Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.',
-    icon: tsLogo,
-  },
-  {
-    name: 'Simple queues',
-    description:
-      'Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.',
-    icon: nodeLogo,
-  },
-  {
-    name: 'Simple queues',
-    description:
-      'Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.',
-    icon: nextLogo,
-  },
-  {
-    name: 'Simple queues',
-    description:
-      'Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.',
-    icon: reactLogo,
-  },
-  {
-    name: 'Advanced security',
-    description:
-      'Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.',
-    icon: vueLogo,
-  },
-  {
-    name: 'Advanced security',
-    description:
-      'Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.',
-    icon: postgresqlLogo,
-  },
-]
+    const features = [
+        {
+          name: 'Interfaces Dinâmicas',
+          description: 'JavaScript permite criar interfaces interativas e fluidas para melhor experiência do usuário.',
+          icon: jsLogo,
+        },
+        {
+          name: 'Código Seguro',
+          description: 'TypeScript reduz erros e melhora a manutenção, tornando o software mais confiável.',
+          icon: tsLogo,
+        },
+        {
+          name: 'Alta Performance',
+          description: 'Node.js garante processamento rápido e escalabilidade para aplicações robustas.',
+          icon: nodeLogo,
+        },
+        {
+          name: 'SEO e Velocidade',
+          description: 'Next.js otimiza a aplicação para carregar rapidamente e melhorar a visibilidade online.',
+          icon: nextLogo,
+        },
+        {
+          name: 'Desenvolvimento Ágil',
+          description: 'React permite a criação de componentes reutilizáveis, acelerando o desenvolvimento.',
+          icon: reactLogo,
+        },
+        {
+          name: 'Flexibilidade e Simplicidade',
+          description: 'Vue.js é leve e intuitivo, tornando o desenvolvimento rápido e eficiente.',
+          icon: vueLogo,
+        },
+        {
+          name: 'Banco de Dados Seguro',
+          description: 'PostgreSQL garante integridade, segurança e eficiência no armazenamento de dados.',
+          icon: postgresqlLogo,
+        },
+      ];
+      
 
   return (
-    <div className='bg-[#edf2f4]'>
+    <div className='bg-[#f0efeb]  pb-20'>
      
-    <div className="bg-[#f0efeb] py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <div className=" py-24 sm:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8  items-center flex flex-col text-center justify-center">
         <div className="mx-auto max-w-2xl lg:text-center">
           <h2 className="text-base/7 font-semibold text-indigo-600">Tecnologias</h2>
           <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl lg:text-balance">
@@ -79,7 +73,8 @@ const features = [
                     alt=""
                     src={feature.icon} />
            
-                  {feature.name}
+                  <p className='text-xs'>{feature.name}
+                    </p>
                 </dt>
                 <dd className="mt-2 text-base/7 text-gray-600">{feature.description}</dd>
               </div>

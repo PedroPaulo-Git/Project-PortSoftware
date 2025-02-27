@@ -1,14 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-// import Git from "../../assets/git.png";
-// import PostgreSQL from "../../assets/postgres.png";
-// import Typescript from "../../assets/ts.png";
-// import Node from "../../assets/node.png";
-// import Tailwind from "../../assets/tailwind.png";
-// import ReactLogo from "../../assets/react.png";
-// import Vercel from "../../assets/Vercel.png";
-// import Javascript from "../../assets/js.png";
-// import VueJs from "../../assets/vue.png";
+
 
 const Marquee: React.FC = () => {
     const marquee: string[] = [
@@ -18,7 +10,7 @@ const Marquee: React.FC = () => {
       ];
       
   return (
-    <div className="bg-[#f0efeb] border-2 border-grayCustom flex text-2xl h-[8rem] items-center -mt-20 overflow-x-hidden saturate-0">
+    <div className="absolute bottom-0 border-2 border-grayCustom flex text-2xl h-[8rem] items-center -mt-20 overflow-x-hidden saturate-0">
     <motion.div
       initial={{ x: 0 }}
       animate={{ x: "-100%" }}
