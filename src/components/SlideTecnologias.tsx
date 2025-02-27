@@ -18,7 +18,7 @@ const Marquee: React.FC = () => {
       ];
       
   return (
-    <div className="bg-[#f0efeb] border-2 border-grayCustom flex text-2xl h-[8rem] items-center -mt-20 overflow-x-hidden saturate-0">
+    <div className="bg-[#f0efeb]  border-2 border-grayCustom flex text-2xl h-[8rem] items-center  overflow-x-hidden saturate-0">
     <motion.div
       initial={{ x: 0 }}
       animate={{ x: "-100%" }}
