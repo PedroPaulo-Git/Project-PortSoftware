@@ -47,26 +47,6 @@ const SubHero = () => {
 
   const content = [
     {
-      title: "Como podemos ajudar sua empresa",
-      subtitle: "Como podemos ajudar sua empresa com nossos serviços de software.",
-      description1:
-        "Na PortSoftware, desenvolvemos soluções personalizadas para cada cliente. Oferecemos serviços de desenvolvimento de software, automação de processos e muito mais.",
-      description2:
-        "Com nosso time altamente qualificado, garantimos que sua empresa tenha as ferramentas necessárias para crescer e se destacar no mercado competitivo.",
-      linkText: "Saiba mais sobre nossos serviços",
-      image:mySubHeroPng,
-    },
-    {
-      title: "Potencialize seu negócio com uma loja online",
-      subtitle: "Potencialize seu negócio com uma loja online de alto desempenho.",
-      description1:
-        "A PortSoftware cria e-commerce personalizados, com integração de sistemas, otimização para conversão e soluções de pagamento seguras.",
-      description2:
-        "Desenvolvemos lojas online rápidas e eficientes, garantindo uma experiência de compra fluida para seus clientes e maximizando seu potencial de vendas.",
-      linkText: "Descubra nossas soluções para E-commerce",
-      image:mySubHeroPng2,
-    },
-    {
       title: "Transforme suas ideias",
       subtitle: "Transforme suas ideias em aplicativos de sucesso.",
       description1:
@@ -75,6 +55,27 @@ const SubHero = () => {
         "Nosso time de desenvolvimento cria apps intuitivos e robustos que ajudam sua empresa a atingir novos patamares de sucesso no mercado digital.",
       linkText: "Veja como podemos criar seu app",
       image:mySubHeroPng3,
+    },
+   
+    {
+      title: "Transforme sua presença digital com um site profissional",
+      subtitle: "Destaque sua marca com um site moderno e eficiente.",
+      description1:
+        "A PortSoftware desenvolve sites personalizados, otimizados para performance e totalmente responsivos, garantindo uma experiência fluida para seus visitantes.",
+      description2:
+        "Criamos soluções digitais sob medida para seu negócio, combinando design inovador e funcionalidades avançadas para potencializar sua presença online.",
+      linkText: "Veja como podemos criar seu site ideal",
+      image: mySubHeroPng2,
+    },
+    {
+      title: "Como podemos ajudar sua empresa",
+      subtitle: "Como podemos ajudar sua empresa com nossos serviços de software.",
+      description1:
+        "Na PortSoftware, desenvolvemos soluções personalizadas para cada cliente. Oferecemos serviços de desenvolvimento de software, automação de processos e muito mais.",
+      description2:
+        "Com nosso time altamente qualificado, garantimos que sua empresa tenha as ferramentas necessárias para crescer e se destacar no mercado competitivo.",
+      linkText: "Saiba mais sobre nossos serviços",
+      image:mySubHeroPng,
     },
     // {
     //   title: "Soluções SaaS que crescem com você",
@@ -93,11 +94,12 @@ const SubHero = () => {
       <div className="lg:w-[12%] border-b-2 sm:border-b-0 sm:border-r-[2px] border-grayCustom border-opacity-20 sm:py-14">
       <Image src={img} width={100} alt="" height={100} className="mx-auto pb-10 sm:pb-0" />
       <div className="relative flex justify-between text-center items-center gap-5 lg:block list-none lg:space-y-16 sm:mt-20">
-        {["Serviços", "E-commerce", "Aplicativo"].map((item, index) => (
+        {["Aplicativo", "Site", "Serviços"].map((item, index) => (
           <li
             key={index}
             onClick={() => handleClick(index)}
-            className={`cursor-pointer h-12 sm:h-6 ${
+            className={`cursor-pointer min-w-20 h-12 sm:min-w-32 sm:h-16 sm:flex s
+              sm:justify-center sm:items-center sm:text-center ${
               activeIndex === index
                 ? "border-blue-500 sm:border-r-2 sm:border-b-0 border-b-2 sm:h-full"
                 : ""

@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Outfit } from "next/font/google";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { FaArrowRight } from "react-icons/fa";
 import { FaBoltLightning } from "react-icons/fa6";
 import Image from "next/image";
 import img from "../assets/Logo.png";
@@ -18,6 +19,7 @@ import Tecnologias from "@/components/Tecnologias";
 import SlideTecnologias from "@/components/SlideTecnologias";
 import Portfolio from "@/components/Portfolio";
 import Footer from "@/components/Footer";
+import WhatsappButton from "@/components/WhatsappButton";
 
 
 const navigation = [
@@ -58,6 +60,7 @@ export default function Example() {
     <div
       className={`${outfit.className} scroll-smooth bg-darkCustom  text-white overflow-x-hidden`}
     >
+      <WhatsappButton/>
       <header className="absolute inset-x-0 top-0 z-50 border-b-[1px] border-[#1d1c1f] text-[#87858b] sm:px-20 ">
         <nav
           aria-label="Global"
@@ -131,11 +134,12 @@ export default function Example() {
             </div>
             <div className="mt-6 flow-root">
               <div className="-my-6 divide-y divide-gray-500/10">
-                <div className="space-y-2 py-6">
+                <div className="space-y-6 py-6">
                   {navigation.map((item) => (
                     <a
                       key={item.name}
                       href={item.href}
+                      onClick={() => setMobileMenuOpen(false)}
                       className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold  hover:bg-Blue_Primary"
                     >
                       {item.name}
@@ -148,7 +152,7 @@ export default function Example() {
           </DialogPanel>
         </Dialog>
       </header>
-<div className="px-4 sm:pb-10 sm:px-20">
+<div className="px-1 sm:pb-10 sm:px-20">
 
 
       <div className="relative px-6 py-14 lg:px-8 md:flex sm:justify-between items-end lg:pb-36">
@@ -165,37 +169,50 @@ export default function Example() {
           />
         </div>
         <div className="max-w-2xl pt-24 sm:pt-40 lg:pt-48">
-          <div className="hidden sm:flex ">
-            <div className="relative text-Blue_Primary font-semibold rounded-full py-1 text-base ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+          <div className="sm:flex ">
+            <div className="relative text-Blue_Primary font-semibold rounded-full py-1 text-xs sm:text-base ring-1 ring-gray-900/10 hover:ring-gray-900/20">
               BEM-VINDO(A) À PORTSOFTWARE 👋
             </div>
           </div>
           <div className="">
-            <h1 className="text-[40px] lg:text-5xl font-normal tracking-tight text-balance  sm:text-7xl">
-              Desenvolvimento personalizado para sua empresa crescer
+            <h1 className=" text-[42px] leading-none tracking-tight  lg:text-5xl font-normal text-balance  sm:text-7xl">
+              Desenvolvimento personalizado <span className="sm:text-7xl  lg:text-5xl ">para sua empresa crescer</span> 
             </h1>
             {/* <p className="mt-8 text-lg font-medium text-pretty  sm:text-xl/8">
               Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
               fugiat veniam occaecat.
             </p> */}
-            <div className="mt-10 text-left">
-              <a href="https://wa.me/558182123705?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20seus%20serviços!" target="_blank" className="text-base text-grayCustom ">
+
+            <div className="hidden sm:flex mt-10 text-left ">
+              <a 
+              href="https://wa.me/558182123705?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20seus%20serviços!" 
+              target="_blank" 
+              className="text-xs sm:text-base text-grayCustom ">
                 <span aria-hidden="true"> ↓ </span>Continuar Explorando
               </a>
             </div>
+
           </div>
         </div>
-        <div className="flex flex-col justify-center items-center max-w-48 text-left lg:mr-32 sm:mr-10 mr-0 ">
-          <h1 className="text-xl mb-8 ">
+        <div className="flex flex-col mt-10 sm:mt-0 justify-center items-center max-w-48 text-left lg:mr-32 sm:mr-10 mr-0 ">
+          <h1 className="text-sm sm:text-xl mb-4 sm:mb-8 ">
             Fazemos a web diferente,todos os dias.
           </h1>
           <a
             href="https://wa.me/558182123705?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20seus%20serviços!"
-            className="neon-button font-semibold text-gray-900 bg-blue-600 p-4 w-full flex justify-center items-center gap-1"
+            className="neon-button font-semibold text-gray-900 bg-blue-600 p-4 w-full flex justify-center items-center text-center gap-1"
           >
-            Vamos começar <span aria-hidden="true"> → </span>
+            Vamos começar <span aria-hidden="true"> <FaArrowRight className="mt-1"/></span>
           </a>
         </div>
+
+        <div className="flex sm:hidden mt-10 text-left ">
+              <a 
+              href="#SOBRE" 
+              className="text-xs sm:text-base text-grayCustom ">
+                <span aria-hidden="true"> ↓ </span>Continuar Explorando
+              </a>
+            </div>
       </div>
 
       <div className="flex justify-center w-full overflow-hidden">
