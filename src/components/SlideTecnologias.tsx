@@ -23,20 +23,20 @@ const Marquee: React.FC = () => {
       initial={{ x: 0 }}
       animate={{ x: "-100%" }}
       transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-      className="flex items-center gap-20 flex-shrink-0 pr-20 text-grayCustom"
+      className="flex items-center gap-10 sm:gap-20 flex-shrink-0 sm:pr-20 text-grayCustom"
     >
       {marquee.map((item, index) => (
-        <span key={index} className="whitespace-nowrap">{item} <span className=" ml-20 font-bold"> / </span></span>
+        <span key={index} className="whitespace-nowrap">{item} <span className="ml-10 sm:ml-20 font-bold"> / </span></span>
       ))}
     </motion.div>
     <motion.div
       initial={{ x: 0 }}
       animate={{ x: "-100%" }}
       transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-      className="flex items-center gap-20 flex-shrink-0 pr-20 text-grayCustom"
+      className="flex items-center gap-10 sm:gap-20 flex-shrink-0 sm:pr-20 text-grayCustom"
     >
       {marquee.map((item, index) => (
-        <span key={index} className="whitespace-nowrap">{item} <span className="ml-20 font-bold"> / </span></span>
+        <span key={index} className="whitespace-nowrap">{item} <span className="ml-10 sm:ml-20 font-bold"> / </span></span>
       ))}
     </motion.div>
   </div>

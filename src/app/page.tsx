@@ -133,7 +133,7 @@ export default function Example() {
 <div className="px-4 sm:pb-10 sm:px-20">
 
 
-      <div className="relative px-6 py-14 lg:px-8 md:flex sm:justify-between">
+      <div className="relative px-6 py-14 lg:px-8 md:flex sm:justify-between items-end lg:pb-36">
         <div
           aria-hidden="true"
           className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -167,7 +167,7 @@ export default function Example() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col justify-center items-center max-w-48 text-left mr-28 mb-28">
+        <div className="flex flex-col justify-center items-center max-w-48 text-left lg:mr-32 sm:mr-10 mr-0 ">
           <h1 className="text-xl mb-8 ">
             Fazemos a web diferente,todos os dias.
           </h1>

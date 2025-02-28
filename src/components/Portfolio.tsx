@@ -30,7 +30,7 @@ const features = [
 
 export default function Portfolio() {
   return (
-    <div className="bg-[#f0efeb]   py-24 sm:py-32 sm:pb-72">
+    <div className="bg-[#f0efeb]   py-24 sm:py-32 sm:pb-72 pb-40">
       <div className="mx-auto pb-40 max-w-7xl px-6 lg:px-8">
       <div className="mx-auto max-w-2xl lg:text-center">
       <h2 className="text-base/7 font-semibold text-Blue_Primary">O que fazemos</h2>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect,useState } from "react";
 import Image from "next/image";
 import Image1 from '../assets/portfolio.png';
 import Image2 from '../assets/portfolio2.png';
@@ -35,8 +35,13 @@ const GalleryPortfolio = () => {
           subdescription: "Desenvolva soluções SaaS personalizadas que permitam a gestão eficiente do seu negócio online, com automação e escalabilidade, tudo acessível na nuvem.", 
           image: Image4 
         }
-      ];
-      
+      ];   
+      const [screenWidth, setScreenWidth] = useState<number>(typeof window !== "undefined" ? window.innerWidth : 0);
+      useEffect(() => {
+        const handleResize = () => setScreenWidth(window.innerWidth);
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
   return (
     <section>
@@ -44,20 +49,43 @@ const GalleryPortfolio = () => {
         <ul className="relative mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((item, index) => (
             <li key={item.id} className="group block overflow-hidden">
-              {index % 2 !== 0 && (
+{screenWidth > 600 ? (
+      <div>
+        {index % 2 !== 0 && (
                 <div className="text-black">
                   <p className="text-lg font-bold">{item.title}</p>
                   <p className="text-sm font-medium mb-3 text-gray-600">{item.description}</p>
                   <p className="text-sm font-normal text-gray-800">{item.subdescription}</p>
                 </div>
               )}
+      </div>
+):(
+    <div>
+
+    </div>
+)}
+              
 
               <Image
                 src={item.image}
                 alt={item.title}
                 className="h-[300px] w-full object-contain transition"
               />
+{screenWidth < 600 ? (
+      <div>
+        {index % 2 !== 0 && (
+                <div className="text-black">
+                  <p className="text-lg font-bold">{item.title}2222</p>
+                  <p className="text-sm font-medium mb-3 text-gray-600">{item.description}</p>
+                  <p className="text-sm font-normal text-gray-800">{item.subdescription}</p>
+                </div>
+              )}
+      </div>
+):(
+    <div>
 
+    </div>
+)}
               {index % 2 === 0 && (
                 <div className="text-black">
                   <p className="text-lg font-bold">{item.title}</p>

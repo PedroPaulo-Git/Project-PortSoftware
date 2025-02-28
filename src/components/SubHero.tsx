@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import mySubHeroPng from "../assets/Subhero.png";
-import img from "../assets/Logo.png";
+import img from "../assets/IconCoffee.png";
 import { motion, AnimatePresence } from "framer-motion"; // Importe o AnimatePresence
 
 const SubHero = () => {
@@ -36,7 +36,7 @@ const SubHero = () => {
 
   // Calculate active index based on scroll position
   useEffect(() => {
-    const sectionHeight = window.innerHeight - 500; // Define altura da janela
+    const sectionHeight = window.innerHeight - 400; // Define altura da janela
     const newIndex = Math.floor(scrollY / sectionHeight); // Calcula o índice com base no scroll
     if (newIndex < content.length && newIndex !== activeIndex) {
       setActiveIndex(newIndex); // Atualiza o índice se o scroll atingir o próximo índice
@@ -47,38 +47,54 @@ const SubHero = () => {
     {
       title: "Como podemos ajudar sua empresa",
       subtitle: "Como podemos ajudar sua empresa com nossos serviços de software.",
-      description:
+      description1:
         "Na PortSoftware, desenvolvemos soluções personalizadas para cada cliente. Oferecemos serviços de desenvolvimento de software, automação de processos e muito mais.",
+      description2:
+        "Com nosso time altamente qualificado, garantimos que sua empresa tenha as ferramentas necessárias para crescer e se destacar no mercado competitivo.",
       linkText: "Saiba mais sobre nossos serviços",
     },
     {
-      title: "Potencialize seu negócio com uma loja online ",
+      title: "Potencialize seu negócio com uma loja online",
       subtitle: "Potencialize seu negócio com uma loja online de alto desempenho.",
-      description:
+      description1:
         "A PortSoftware cria e-commerce personalizados, com integração de sistemas, otimização para conversão e soluções de pagamento seguras.",
+      description2:
+        "Desenvolvemos lojas online rápidas e eficientes, garantindo uma experiência de compra fluida para seus clientes e maximizando seu potencial de vendas.",
       linkText: "Descubra nossas soluções para E-commerce",
     },
     {
       title: "Transforme suas ideias",
       subtitle: "Transforme suas ideias em aplicativos de sucesso.",
-      description:
+      description1:
         "Desenvolvemos aplicativos móveis que atendem às necessidades do seu negócio, com foco na experiência do usuário e performance.",
+      description2:
+        "Nosso time de desenvolvimento cria apps intuitivos e robustos que ajudam sua empresa a atingir novos patamares de sucesso no mercado digital.",
       linkText: "Veja como podemos criar seu app",
     },
+    // {
+    //   title: "Soluções SaaS que crescem com você",
+    //   subtitle: "Soluções SaaS eficientes e escaláveis para sua empresa.",
+    //   description1:
+    //     "Oferecemos sistemas SaaS customizados que crescem com seu negócio. Com funcionalidades poderosas e integrações fáceis, garantimos que sua empresa se mantenha competitiva no mercado.",
+    //   description2:
+    //     "Nossa plataforma SaaS oferece flexibilidade, segurança e uma gestão simplificada, ajudando sua empresa a se adaptar às mudanças do mercado e crescer de forma sustentável.",
+    //   linkText: "Saiba mais sobre nossos sistemas SaaS",
+    // },
   ];
+  
 
   return (
     <div className="flex flex-col sm:flex-row lg:flex px-8 py-40 lg:px-20">
       <div className="lg:w-[12%] border-b-2 sm:border-b-0 sm:border-r-[2px] border-grayCustom border-opacity-20 sm:py-14">
-      <Image src={img} width={100} alt="" height={100} className="" />
-      <div className="relative flex justify-center text-center items-center gap-5 lg:block list-none lg:space-y-16 sm:mt-20">
+      <Image src={img} width={100} alt="" height={100} className="mx-auto pb-10 sm:pb-0" />
+      <div className="relative flex justify-between text-center items-center gap-5 lg:block list-none lg:space-y-16 sm:mt-20">
         {["Serviços", "E-commerce", "Aplicativo"].map((item, index) => (
           <li
             key={index}
             onClick={() => handleClick(index)}
-            className={`cursor-pointer h-6 ${
+            className={`cursor-pointer h-12 sm:h-6 ${
               activeIndex === index
-                ? "border-blue-500 sm:border-r-2 sm:border-b-0 border-b-2 h-full"
+                ? "border-blue-500 sm:border-r-2 sm:border-b-0 border-b-2 sm:h-full"
                 : ""
             }`}
           >
@@ -92,24 +108,26 @@ const SubHero = () => {
       <AnimatePresence mode="wait">
         <motion.div
           key={activeIndex} // Key muda com o activeIndex, forçando a animação
-          className="w-2/3 sm:flex sm:py-14 sm:ml-16 mt-10 sm:mt-0"
-          initial={{ opacity: 0, y: 20 }} // Estado inicial da animação
+          className=" sm:flex sm:py-14 sm:ml-16 mt-10 sm:mt-0 justify-between"
+          initial={{ opacity: 0, y: 10 }} // Estado inicial da animação
           animate={{ opacity: 1, y: 0 }} // Estado animado
           exit={{ opacity: 0, y: -50 }} // Estado de saída
           transition={{ duration: 1 }} // Duração da animação
         >
-          <div className="w-full sm:max-w-[50%]">
+          <div className="w-full sm:max-w-[35%] space-y-2">
             <h1 className="text-4xl sm:text-6xl sm:mb-10">
               {content[activeIndex].title}
             </h1>
-            <h2 className="text-2xl sm:mb-8">{content[activeIndex].subtitle}</h2>
-            <p className="mb-2 sm:mb-8 text-[#a5a5a5]">
-              {content[activeIndex].description}
+            <h2 className="sm:text-2xl sm:mb-8 pt-10">{content[activeIndex].subtitle}</h2>
+            <p className="text-sm sm:text-base sm:mb-8 text-[#a5a5a5]">
+              {content[activeIndex].description1}
+            
             </p>
-            <p className="mb-8 text-[#a5a5a5]">
-              {content[activeIndex].description}
+            <p className="text-sm sm:text-base pb-6 sm:mb-8 text-[#a5a5a5]">
+              {content[activeIndex].description2}
+            
             </p>
-            <a className="text-Blue_Primary" href="">
+            <a className="mb-10 text-Blue_Primary" href="">
               {content[activeIndex].linkText} →
             </a>
           </div>
@@ -117,7 +135,7 @@ const SubHero = () => {
             <Image
               src={mySubHeroPng}
               alt=""
-              className="w-full h-full object-contain"
+              className="w-full h-full object-contain mt-20 lg:mt-0"
             />
           </div>
         </motion.div>
