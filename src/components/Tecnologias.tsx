@@ -52,7 +52,7 @@ const Tecnologias = () => {
       
 
   return (
-    <div className='bg-[#f0efeb]  pb-20'>
+    <div id='TECNOLOGIAS' className='bg-[#f0efeb]  pb-20'>
      
     <div className=" py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8  items-center flex flex-col text-center justify-center">

@@ -36,20 +36,27 @@ const GalleryPortfolio = () => {
           image: Image4 
         }
       ];   
-      const [screenWidth, setScreenWidth] = useState<number>(typeof window !== "undefined" ? window.innerWidth : 0);
+      const [screenWidth, setScreenWidth] = useState<number | undefined>(undefined); // Inicialize com undefined
+  const [isMounted, setIsMounted] = useState(false); // P
       useEffect(() => {
         const handleResize = () => setScreenWidth(window.innerWidth);
+        
+        if (typeof window !== "undefined") {
+          handleResize(); // Atualize a largura da tela logo após o carregamento no lado do cliente
+        }
+    
+        setIsMounted(true); // Marca que o componente foi montado
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
-    }, []);
-
+      }, []);
+      const width = screenWidth || 0; 
   return (
     <section>
       <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
         <ul className="relative mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((item, index) => (
             <li key={item.id} className="group block overflow-hidden">
-{screenWidth > 600 ? (
+{width > 600 ? (
       <div>
         {index % 2 !== 0 && (
                 <div className="text-black">
@@ -71,11 +78,11 @@ const GalleryPortfolio = () => {
                 alt={item.title}
                 className="h-[300px] w-full object-contain transition"
               />
-{screenWidth < 600 ? (
+{width < 600 ? (
       <div>
         {index % 2 !== 0 && (
                 <div className="text-black">
-                  <p className="text-lg font-bold">{item.title}2222</p>
+                  <p className="text-lg font-bold">{item.title}</p>
                   <p className="text-sm font-medium mb-3 text-gray-600">{item.description}</p>
                   <p className="text-sm font-normal text-gray-800">{item.subdescription}</p>
                 </div>

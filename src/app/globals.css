@@ -4,9 +4,11 @@
 
 :root{
   background-color: #edf2f4;
+  scroll-behavior: smooth;
 }
 body {
  background-color: #edf2f4;
+  scroll-behavior: smooth;
 }
 /* Efeito Neon com Animação */
 .neon-button {

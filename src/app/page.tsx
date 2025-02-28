@@ -1,9 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import { motion } from "framer-motion";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Outfit } from "next/font/google";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { FaBoltLightning } from "react-icons/fa6";
 import Image from "next/image";
 import img from "../assets/Logo.png";
 import Hero1 from "../assets/heroimage1.png";
@@ -19,19 +21,42 @@ import Footer from "@/components/Footer";
 
 
 const navigation = [
-  { name: "Product", href: "#" },
-  { name: "Features", href: "#" },
-  { name: "Marketplace", href: "#" },
-  { name: "Company", href: "#" },
+  { name: "INICIO", href: "#INICIO" },
+  
+  { name: "SOBRE NÓS", href: "#SOBRE" },
+  { name: "TECNOLOGIAS", href: "#TECNOLOGIAS" },
+  { name: "PROJETOS", href: "#PROJETOS" },
+  { name: "TRABALHE CONOSCO", href: "#TRABALHE" },
 ];
 
 const outfit = Outfit({ subsets: ["latin"] });
 export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const images = [Hero1, Hero2, Hero3, Hero4, Hero5];
+  const extendedImages = [...images, ...images]; 
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCurrentImage((prevIndex) => (prevIndex + 1) % images.length);
+  //   }, 3000); // 3 seconds interval
 
+  //   return () => clearInterval(interval);
+  // }, [images.length]);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 600);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Defina o valor inicial no cliente
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
     <div
-      className={`${outfit.className} bg-darkCustom  text-white overflow-x-hidden`}
+      className={`${outfit.className} scroll-smooth bg-darkCustom  text-white overflow-x-hidden`}
     >
       <header className="absolute inset-x-0 top-0 z-50 border-b-[1px] border-[#1d1c1f] text-[#87858b] sm:px-20 ">
         <nav
@@ -46,7 +71,7 @@ export default function Example() {
                 width={100}
                 alt=""
                 height={100}
-                className="pl-2 sm:pl-20 lg:min-w-40"
+                className="pl-2 2xl:pl-0 2xl:w-20 w-16"
               />
             </a>
           </div>
@@ -72,8 +97,8 @@ export default function Example() {
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="#" className="text-sm/6 font-semibold ">
-              Log in <span aria-hidden="true">&rarr;</span>
+            <a href="https://wa.me/558182123705?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20seus%20serviços!" className="text-sm/6 font-semibold flex gap-4 items-center  ">
+            <FaBoltLightning className="text-Blue_Primary" /> QUERO UM ORÇAMENTO 
             </a>
           </div>
         </nav>
@@ -83,16 +108,16 @@ export default function Example() {
           className="lg:hidden"
         >
           <div className="fixed inset-0 z-50" />
-          <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-darkCustom  text-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
-              <a href="#" className="-m-1.5 p-1.5">
+              <a href="#INICIO" className="-m-1.5 p-1.5">
                 <span className="sr-only">Your Company</span>
                 <Image
                   src={img}
                   width={100}
                   alt=""
                   height={100}
-                  className="pl-2 sm:pl-20 min-w-40"
+                  className="pl-2 sm:pl-20 max-w-16"
                 />
               </a>
               <button
@@ -111,20 +136,13 @@ export default function Example() {
                     <a
                       key={item.name}
                       href={item.href}
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold  hover:bg-gray-50"
+                      className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold  hover:bg-Blue_Primary"
                     >
                       {item.name}
                     </a>
                   ))}
                 </div>
-                <div className="py-6">
-                  <a
-                    href="#"
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold  hover:bg-gray-50"
-                  >
-                    Log in
-                  </a>
-                </div>
+                
               </div>
             </div>
           </DialogPanel>
@@ -146,14 +164,14 @@ export default function Example() {
             className="relative left-[calc(50%-11rem)] aspect-1155/678 w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
           />
         </div>
-        <div className="max-w-2xl pt-32 sm:pt-40 lg:pt-48">
+        <div className="max-w-2xl pt-24 sm:pt-40 lg:pt-48">
           <div className="hidden sm:flex ">
             <div className="relative text-Blue_Primary font-semibold rounded-full py-1 text-base ring-1 ring-gray-900/10 hover:ring-gray-900/20">
               BEM-VINDO(A) À PORTSOFTWARE 👋
             </div>
           </div>
           <div className="">
-            <h1 className="text-4xl lg:text-5xl font-normal tracking-tight text-balance  sm:text-7xl">
+            <h1 className="text-[40px] lg:text-5xl font-normal tracking-tight text-balance  sm:text-7xl">
               Desenvolvimento personalizado para sua empresa crescer
             </h1>
             {/* <p className="mt-8 text-lg font-medium text-pretty  sm:text-xl/8">
@@ -161,7 +179,7 @@ export default function Example() {
               fugiat veniam occaecat.
             </p> */}
             <div className="mt-10 text-left">
-              <a href="#" className="text-base text-grayCustom ">
+              <a href="https://wa.me/558182123705?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20seus%20serviços!" target="_blank" className="text-base text-grayCustom ">
                 <span aria-hidden="true"> ↓ </span>Continuar Explorando
               </a>
             </div>
@@ -172,41 +190,59 @@ export default function Example() {
             Fazemos a web diferente,todos os dias.
           </h1>
           <a
-            href="#"
+            href="https://wa.me/558182123705?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20seus%20serviços!"
             className="neon-button font-semibold text-gray-900 bg-blue-600 p-4 w-full flex justify-center items-center gap-1"
           >
             Vamos começar <span aria-hidden="true"> → </span>
           </a>
         </div>
       </div>
-      <div className="flex gap-10 justify-center">
-       <Image
-       className="w-72 opacity-70 h-full"
-       alt=""
-       src={Hero1}
-       />
-  <Image
-       className="w-72 opacity-70 h-full"
-       alt=""
-       src={Hero2}
-       />
-  <Image
-       className="w-72 opacity-70 h-full"
-       alt=""
-       src={Hero3}
-       />
-  <Image
-       className="w-72 opacity-70 h-full"
-       alt=""
-       src={Hero4}
-       /> 
-       <Image
-       className="w-72 opacity-70 h-full"
-       alt=""
-       src={Hero5}
-       />
 
-      </div>
+      <div className="flex justify-center w-full overflow-hidden">
+      {isMobile ? (
+        <motion.div
+          className="flex gap-10"
+          animate={{
+            x: ["0%", "-100%", "-200%", "-300%", "-400%", "-500%", "-600%"], // Move as imagens até o final e reinicia
+          }}
+          transition={{
+            duration: 30, // A duração do loop
+            ease: "linear",
+            repeat: Infinity, // Loop infinito
+          }}
+        >
+          {extendedImages.map((image, index) => (
+            <Image
+              key={index}
+              src={image}
+              alt={`Hero ${index + 1}`}
+              className="w-72 opacity-70 h-full object-contain"
+            />
+          ))}
+        </motion.div>
+      ) : (
+        <motion.div
+          className="flex gap-10"
+          animate={{
+            x: ["0%", "-100%", "-200%", "-300%", "-400%", "-500%", "-600%"], // Move as imagens até o final e reinicia
+          }}
+          transition={{
+            duration: 200, // A duração do loop
+            ease: "linear",
+            repeat: Infinity, // Loop infinito
+          }}
+        >
+          {extendedImages.map((image, index) => (
+            <Image
+              key={index}
+              src={image}
+              alt={`Hero ${index + 1}`}
+              className="w-72 opacity-70 h-full object-contain"
+            />
+          ))}
+        </motion.div>
+      )}
+    </div>
       </div>
 
       <SubHero/>

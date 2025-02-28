@@ -89,7 +89,7 @@ const SubHero = () => {
   
 
   return (
-    <div className="flex flex-col sm:flex-row lg:flex px-8 py-40 lg:px-20">
+    <div id="SOBRE" className="flex flex-col sm:flex-row lg:flex px-8 py-40 lg:px-20">
       <div className="lg:w-[12%] border-b-2 sm:border-b-0 sm:border-r-[2px] border-grayCustom border-opacity-20 sm:py-14">
       <Image src={img} width={100} alt="" height={100} className="mx-auto pb-10 sm:pb-0" />
       <div className="relative flex justify-between text-center items-center gap-5 lg:block list-none lg:space-y-16 sm:mt-20">
