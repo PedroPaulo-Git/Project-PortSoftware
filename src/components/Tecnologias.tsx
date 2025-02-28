@@ -66,11 +66,11 @@ const Tecnologias = () => {
           </p>
         </div>
         <div className="w-full mt-16 sm:mt-20 lg:mt-24 ">
-  <div className="grid grid-cols-5 grid-rows-2 gap-20 justify-items-center">
+  <div className="grid  grid-cols-2 grid-rows-1 lg:grid-cols-5 lg:grid-rows-2 gap-20 justify-items-center">
     {features.map((feature, index) => (
       <div 
         key={feature.name} 
-        className={`relative items-start ${index >= 5 ? 'col-span-2 ' : ''}  ${index == 5 ? ' pl-[200px] -mr-24' : ''} ${index == 6 ? ' pl-[100px] -mr-24' : ''}`} // Para centralizar os 2 itens da última linha
+        className={`relative items-start ${index >= 5 ? 'lg:col-span-2 ' : ''}  ${index == 5 ? ' lg:pl-[200px] lg:-mr-24' : ''} ${index == 6 ? ' pl-[100px] lg:-mr-24 -mr-32' : ''}`} // Para centralizar os 2 itens da última linha
       >
         <dt className="text-base/7 font-semibold text-gray-900 grid ">
           <Image alt="" src={feature.icon} />
