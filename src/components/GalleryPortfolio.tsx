@@ -49,6 +49,9 @@ const GalleryPortfolio = () => {
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
       }, []);
+      if (!isMounted) {
+        return null; // Evita renderização até que o componente seja montado
+      }
       const width = screenWidth || 0; 
   return (
     <section>
