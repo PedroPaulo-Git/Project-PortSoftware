@@ -1,6 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, act } from "react";
 import Image from "next/image";
 import mySubHeroPng from "../assets/Subhero.png";
+import mySubHeroPng2 from "../assets/Subhero2.png";
+import mySubHeroPng3 from "../assets/Subhero3.png";
 import img from "../assets/IconCoffee.png";
 import { motion, AnimatePresence } from "framer-motion"; // Importe o AnimatePresence
 
@@ -52,6 +54,7 @@ const SubHero = () => {
       description2:
         "Com nosso time altamente qualificado, garantimos que sua empresa tenha as ferramentas necessárias para crescer e se destacar no mercado competitivo.",
       linkText: "Saiba mais sobre nossos serviços",
+      image:mySubHeroPng,
     },
     {
       title: "Potencialize seu negócio com uma loja online",
@@ -61,6 +64,7 @@ const SubHero = () => {
       description2:
         "Desenvolvemos lojas online rápidas e eficientes, garantindo uma experiência de compra fluida para seus clientes e maximizando seu potencial de vendas.",
       linkText: "Descubra nossas soluções para E-commerce",
+      image:mySubHeroPng2,
     },
     {
       title: "Transforme suas ideias",
@@ -70,6 +74,7 @@ const SubHero = () => {
       description2:
         "Nosso time de desenvolvimento cria apps intuitivos e robustos que ajudam sua empresa a atingir novos patamares de sucesso no mercado digital.",
       linkText: "Veja como podemos criar seu app",
+      image:mySubHeroPng3,
     },
     // {
     //   title: "Soluções SaaS que crescem com você",
@@ -133,7 +138,7 @@ const SubHero = () => {
           </div>
           <div>
             <Image
-              src={mySubHeroPng}
+              src={content[activeIndex].image}
               alt=""
               className="w-full h-full object-contain mt-20 lg:mt-0"
             />
