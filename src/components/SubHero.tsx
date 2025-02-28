@@ -1,4 +1,4 @@
-import { useState, useEffect, act } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import mySubHeroPng from "../assets/Subhero.png";
 import mySubHeroPng2 from "../assets/Subhero2.png";
