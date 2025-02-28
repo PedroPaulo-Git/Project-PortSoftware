@@ -9,14 +9,14 @@ const SubHero = () => {
   const [scrollY, setScrollY] = useState<number>(0);
 
   // Função para rolar suavemente até uma seção
-  const scrollToSection = (index: number) => {
-    const sectionHeight = window.innerHeight - 100; // Altura da seção
-    const targetY = index * sectionHeight; // Posição Y alvo
-    window.scrollTo({
-      top: targetY,
-      behavior: "smooth", // Scroll suave
-    });
-  };
+  // const scrollToSection = (index: number) => {
+  //   const sectionHeight = window.innerHeight - 100; // Altura da seção
+  //   const targetY = index * sectionHeight; // Posição Y alvo
+  //   window.scrollTo({
+  //     top: targetY,
+  //     behavior: "smooth", // Scroll suave
+  //   });
+  // };
 
   // Handle tab clicks
   const handleClick = (index: number) => {
