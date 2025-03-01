@@ -1,5 +1,6 @@
 import React from "react";
 import { IoLogoWhatsapp } from "react-icons/io5";
+
 const WhatsappButton = () => {
   return (
     <div className="group relative">

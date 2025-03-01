@@ -84,7 +84,7 @@ const GalleryPortfolio = () => {
               <Image
                 src={item.image}
                 alt={item.title}
-                className="h-[300px] w-full object-contain transition"
+                className="h-[300px] w-full object-contain transition select-none"
               />
               {width < 600 ? (
                 <div>

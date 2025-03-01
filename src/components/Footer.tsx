@@ -72,7 +72,7 @@ const Footer = () => {
           <Image
             alt=""
             src={FooterImage}
-            className="absolute -top-72 xl:-top-60 lg:-top-48 right-0 sm:w-[500px] lg:w-[600px] xl:w-[700px] 2xl:w-[1000px] "
+            className="absolute select-none -top-72 xl:-top-60 lg:-top-48 right-0 sm:w-[500px] lg:w-[600px] xl:w-[700px] 2xl:w-[1000px] "
           />
         </div>
       </div>

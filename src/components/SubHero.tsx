@@ -96,7 +96,7 @@ const SubHero = () => {
           width={100}
           alt=""
           height={100}
-          className="mx-auto pb-10 sm:pb-0"
+          className="mx-auto pb-10 sm:pb-0 select-none"
         />
         <div className="relative flex justify-between text-center items-center gap-5 lg:block list-none lg:space-y-16 sm:mt-20">
           {["Aplicativo", "Site", "Serviços"].map((item, index) => (
@@ -150,7 +150,7 @@ const SubHero = () => {
             <Image
               src={content[activeIndex].image}
               alt=""
-              className="w-full h-full object-contain mt-20 lg:mt-0"
+              className="w-full h-full select-none object-contain mt-20 lg:mt-0"
             />
           </div>
         </motion.div>
