@@ -32,13 +32,13 @@ const GalleryPortfolio = () => {
       image: Image3,
     },
     {
-      "id": 4,
-      "title": "SaaS para Seu Negócio",
-      "description": "Tudo o que você precisa, sem complicação.",
-      "subdescription": "Um software como serviço (SaaS) que simplifica a gestão do seu negócio. Sem instalações, sem dor de cabeça. Acesse, automatize e foque no que realmente importa.",
-      "image": Image4
-    }
-    
+      id: 4,
+      title: "SaaS para Seu Negócio",
+      description: "Tudo o que você precisa, sem complicação.",
+      subdescription:
+        "Um software como serviço (SaaS) que simplifica a gestão do seu negócio. Sem instalações, sem dor de cabeça. Acesse, automatize e foque no que realmente importa.",
+      image: Image4,
+    },
   ];
   const [screenWidth, setScreenWidth] = useState<number | undefined>(undefined); // Inicialize com undefined
   const [isMounted, setIsMounted] = useState(false); // P
@@ -84,7 +84,7 @@ const GalleryPortfolio = () => {
               <Image
                 src={item.image}
                 alt={item.title}
-                draggable="false" 
+                draggable="false"
                 className="h-[300px] w-full object-contain transition select-none"
               />
               {width < 600 ? (

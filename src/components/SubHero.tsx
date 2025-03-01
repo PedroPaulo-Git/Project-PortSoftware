@@ -95,7 +95,7 @@ const SubHero = () => {
           src={img}
           width={100}
           alt=""
-          draggable="false" 
+          draggable="false"
           height={100}
           className="mx-auto pb-10 sm:pb-0 select-none"
         />
@@ -151,7 +151,7 @@ const SubHero = () => {
             <Image
               src={content[activeIndex].image}
               alt=""
-              draggable="false" 
+              draggable="false"
               className="w-full h-full select-none object-contain mt-20 lg:mt-0"
             />
           </div>
