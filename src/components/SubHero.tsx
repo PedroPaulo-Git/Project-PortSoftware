@@ -54,9 +54,10 @@ const SubHero = () => {
       description2:
         "Nosso time de desenvolvimento cria apps intuitivos e robustos que ajudam sua empresa a atingir novos patamares de sucesso no mercado digital.",
       linkText: "Veja como podemos criar seu app",
-      image:mySubHeroPng3,
+      linkHref:
+        "https://wa.me/558182123705?text=Olá,%20quero%20saber%20mais%20sobre%20desenvolvimento%20de%20aplicativos!",
+      image: mySubHeroPng3,
     },
-   
     {
       title: "Transforme sua presença digital com um site profissional",
       subtitle: "Destaque sua marca com um site moderno e eficiente.",
@@ -65,51 +66,55 @@ const SubHero = () => {
       description2:
         "Criamos soluções digitais sob medida para seu negócio, combinando design inovador e funcionalidades avançadas para potencializar sua presença online.",
       linkText: "Veja como podemos criar seu site ideal",
+      linkHref:
+        "https://wa.me/558182123705?text=Olá,%20quero%20um%20site%20profissional%20para%20minha%20empresa!",
       image: mySubHeroPng2,
     },
     {
       title: "Como podemos ajudar sua empresa",
-      subtitle: "Como podemos ajudar sua empresa com nossos serviços de software.",
+      subtitle:
+        "Como podemos ajudar sua empresa com nossos serviços de software.",
       description1:
         "Na PortSoftware, desenvolvemos soluções personalizadas para cada cliente. Oferecemos serviços de desenvolvimento de software, automação de processos e muito mais.",
       description2:
         "Com nosso time altamente qualificado, garantimos que sua empresa tenha as ferramentas necessárias para crescer e se destacar no mercado competitivo.",
       linkText: "Saiba mais sobre nossos serviços",
-      image:mySubHeroPng,
+      linkHref:
+        "https://wa.me/558182123705?text=Olá,%20quero%20saber%20mais%20sobre%20seus%20serviços%20de%20software!",
+      image: mySubHeroPng,
     },
-    // {
-    //   title: "Soluções SaaS que crescem com você",
-    //   subtitle: "Soluções SaaS eficientes e escaláveis para sua empresa.",
-    //   description1:
-    //     "Oferecemos sistemas SaaS customizados que crescem com seu negócio. Com funcionalidades poderosas e integrações fáceis, garantimos que sua empresa se mantenha competitiva no mercado.",
-    //   description2:
-    //     "Nossa plataforma SaaS oferece flexibilidade, segurança e uma gestão simplificada, ajudando sua empresa a se adaptar às mudanças do mercado e crescer de forma sustentável.",
-    //   linkText: "Saiba mais sobre nossos sistemas SaaS",
-    // },
   ];
-  
 
   return (
-    <div id="SOBRE" className="flex flex-col sm:flex-row lg:flex px-8 py-40 lg:px-20">
+    <div
+      id="SOBRE"
+      className="flex flex-col sm:flex-row lg:flex px-8 py-40 lg:px-20"
+    >
       <div className="lg:w-[12%] border-b-2 sm:border-b-0 sm:border-r-[2px] border-grayCustom border-opacity-20 sm:py-14">
-      <Image src={img} width={100} alt="" height={100} className="mx-auto pb-10 sm:pb-0" />
-      <div className="relative flex justify-between text-center items-center gap-5 lg:block list-none lg:space-y-16 sm:mt-20">
-        {["Aplicativo", "Site", "Serviços"].map((item, index) => (
-          <li
-            key={index}
-            onClick={() => handleClick(index)}
-            className={`cursor-pointer min-w-20 h-12 sm:min-w-32 sm:h-16 sm:flex s
+        <Image
+          src={img}
+          width={100}
+          alt=""
+          height={100}
+          className="mx-auto pb-10 sm:pb-0"
+        />
+        <div className="relative flex justify-between text-center items-center gap-5 lg:block list-none lg:space-y-16 sm:mt-20">
+          {["Aplicativo", "Site", "Serviços"].map((item, index) => (
+            <li
+              key={index}
+              onClick={() => handleClick(index)}
+              className={`cursor-pointer min-w-20 h-12 sm:min-w-32 sm:h-16 sm:flex s
               sm:justify-center sm:items-center sm:text-center ${
-              activeIndex === index
-                ? "border-blue-500 sm:border-r-2 sm:border-b-0 border-b-2 sm:h-full"
-                : ""
-            }`}
-          >
-            {item}
-          </li>
-        ))}
+                activeIndex === index
+                  ? "border-blue-500 sm:border-r-2 sm:border-b-0 border-b-2 sm:h-full"
+                  : ""
+              }`}
+            >
+              {item}
+            </li>
+          ))}
+        </div>
       </div>
-    </div>
 
       {/* Usando AnimatePresence para animar a entrada e saída do conteúdo */}
       <AnimatePresence mode="wait">
@@ -125,17 +130,20 @@ const SubHero = () => {
             <h1 className="text-4xl sm:text-6xl sm:mb-10">
               {content[activeIndex].title}
             </h1>
-            <h2 className="sm:text-2xl sm:mb-8 pt-10">{content[activeIndex].subtitle}</h2>
+            <h2 className="sm:text-2xl sm:mb-8 pt-10">
+              {content[activeIndex].subtitle}
+            </h2>
             <p className="text-sm sm:text-base sm:mb-8 text-[#a5a5a5]">
               {content[activeIndex].description1}
-            
             </p>
             <p className="text-sm sm:text-base pb-6 sm:mb-8 text-[#a5a5a5]">
               {content[activeIndex].description2}
-            
             </p>
-            <a className="mb-10 text-Blue_Primary" href="">
-              {content[activeIndex].linkText} →
+            <a
+              className="mb-10 text-Blue_Primary"
+              href={content[activeIndex]?.linkHref}
+            >
+              {content[activeIndex]?.linkText} →
             </a>
           </div>
           <div>

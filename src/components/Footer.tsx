@@ -46,15 +46,16 @@ const Footer = () => {
               />
             </a>
             <a
-             href="https://wa.me/558182123705?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20seus%20serviços!"
+              href="https://wa.me/558182123705?text=Olá,%20já%20decidi!%20Quero%20contratar%20seus%20serviços.%20Podemos%20conversar? "
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaWhatsapp
                 size={30}
-                className="text-gray-500 hover:text-Blue_Primary "
+                className="text-gray-500 hover:text-Blue_Primary"
               />
             </a>
+
             <a
               href="mailto:portsoftware@gmail.com"
               target="_blank"
