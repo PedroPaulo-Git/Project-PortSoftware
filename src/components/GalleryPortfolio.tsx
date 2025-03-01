@@ -84,6 +84,7 @@ const GalleryPortfolio = () => {
               <Image
                 src={item.image}
                 alt={item.title}
+                draggable="false" 
                 className="h-[300px] w-full object-contain transition select-none"
               />
               {width < 600 ? (

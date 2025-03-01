@@ -83,7 +83,7 @@ const Tecnologias = () => {
                   }`} // Para centralizar os 2 itens da última linha
                 >
                   <dt className="text-base/7 font-semibold text-gray-900 grid ">
-                    <Image className="select-none" alt="" src={feature.icon} />
+                    <Image className="select-none" draggable="false"   alt="" src={feature.icon} />
                     <p className="text-xs">{feature.name}</p>
                   </dt>
                   <dd className="mt-2 text-xs sm:text-base/7 text-gray-600">

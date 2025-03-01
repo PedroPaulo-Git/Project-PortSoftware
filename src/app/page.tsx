@@ -122,6 +122,7 @@ export default function Example() {
                   src={img}
                   width={100}
                   alt=""
+                  draggable="false" 
                   height={100}
                   className="pl-2 sm:pl-20 max-w-16"
                 />
@@ -237,6 +238,7 @@ export default function Example() {
                 <Image
                   key={index}
                   src={image}
+                  draggable="false" 
                   alt={`Hero ${index + 1}`}
                   className="w-72 opacity-70 h-full object-contain"
                 />
@@ -258,6 +260,7 @@ export default function Example() {
                 <Image
                   key={index}
                   src={image}
+                  draggable="false" 
                   alt={`Hero ${index + 1}`}
                   className="w-72 opacity-70 h-full object-contain"
                 />

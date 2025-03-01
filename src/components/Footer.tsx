@@ -71,6 +71,7 @@ const Footer = () => {
         <div className="">
           <Image
             alt=""
+            draggable="false" 
             src={FooterImage}
             className="absolute select-none -top-72 xl:-top-60 lg:-top-48 right-0 sm:w-[500px] lg:w-[600px] xl:w-[700px] 2xl:w-[1000px] "
           />
