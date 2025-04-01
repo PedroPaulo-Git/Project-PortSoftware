@@ -68,7 +68,7 @@ export default function FormModal({ open, onClose }: FormModalProps) {
 
     // Caso seja válido, envia os dados para o Google Sheets
     try {
-        const response = await fetch("https://script.google.com/macros/s/AKfycbwJr4CDwT4ejjIsxpO46d9hD42tOmYoN5sVQYe_u6uk891cr-HGtatvL51zleF8J4cxIw/exec", {
+         await fetch("https://script.google.com/macros/s/AKfycbwJr4CDwT4ejjIsxpO46d9hD42tOmYoN5sVQYe_u6uk891cr-HGtatvL51zleF8J4cxIw/exec", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(formData),
