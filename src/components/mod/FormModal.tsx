@@ -72,6 +72,7 @@ export default function FormModal({ open, onClose }: FormModalProps) {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(formData),
+          mode: 'no-cors', // Não recomendado para tratar resposta
         });
     
         const result = await response.json();
