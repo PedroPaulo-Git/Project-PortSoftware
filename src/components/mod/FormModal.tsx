@@ -72,12 +72,15 @@ export default function FormModal({ open, onClose }: FormModalProps) {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(formData),
-          mode: 'no-cors', // Não recomendado para tratar resposta
+     
         });
     
         // const result = await response.json();
         // console.log(result);
-        console.log("Formulário enviado com sucesso!");
+    // A resposta do Apps Script estará aqui
+    const result = await response.json();
+    console.log(result);  // Verifique a resposta
+    console.log("Formulário enviado com sucesso!");
       }catch (error) {
         console.error("Erro ao enviar formulário:", error);
       }
