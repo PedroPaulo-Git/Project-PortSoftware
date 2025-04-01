@@ -23,10 +23,11 @@ export default function FormModal({ open, onClose }: FormModalProps) {
 
   const [formSubmitted, setFormSubmitted] = useState(false);
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    setErrors({ ...errors, [e.target.name]: "" }); // Reset error message on change
+    setErrors({ ...errors, [e.target.name]: "" });
   };
+  
 
   const validateForm = () => {
     let valid = true;
