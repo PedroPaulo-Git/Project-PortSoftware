@@ -75,8 +75,9 @@ export default function FormModal({ open, onClose }: FormModalProps) {
           mode: 'no-cors', // Não recomendado para tratar resposta
         });
     
-        const result = await response.json();
-        console.log(result);
+        // const result = await response.json();
+        // console.log(result);
+        console.log("Formulário enviado com sucesso!");
       }catch (error) {
         console.error("Erro ao enviar formulário:", error);
       }
