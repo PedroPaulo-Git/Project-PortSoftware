@@ -54,7 +54,8 @@ export default function FormModal({ open, onClose }: FormModalProps) {
     return valid;
   };
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+
     e.preventDefault();
 
     const isValid = validateForm();
