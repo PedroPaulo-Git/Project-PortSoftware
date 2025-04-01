@@ -77,7 +77,7 @@ export default function FormModal({ open, onClose }: FormModalProps) {
     
         const result = await response.json();
         console.log(result);
-      } catch (error) {
+      }catch (error) {
         console.error("Erro ao enviar formulário:", error);
       }
 
@@ -89,7 +89,10 @@ export default function FormModal({ open, onClose }: FormModalProps) {
 
   return (
     <Dialog open={open} onOpenChange={onClose}>
-      <DialogContent className="bg-black border-gray-800 text-white rounded-lg">
+      <DialogContent
+        aria-labelledby="dialog-title" // Aqui, estamos usando o id do título
+        aria-describedby="dialog-description" // E aqui, um id para a descrição (se houver)
+       className="bg-black border-gray-800 text-white rounded-lg">
         <DialogHeader>
           <DialogTitle className="text-xl font-bold text-center">Fale Conosco</DialogTitle>
         </DialogHeader>
