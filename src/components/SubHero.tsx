@@ -6,7 +6,7 @@ import mySubHeroPng3 from "../assets/Subhero3.png";
 import img from "../assets/IconCoffee.png";
 import { motion, AnimatePresence } from "framer-motion"; // Importe o AnimatePresence
 
-const SubHero = () => {
+const SubHero = ({ handleForm }: { handleForm: () => void }) => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [scrollY, setScrollY] = useState<number>(0);
 
@@ -140,12 +140,12 @@ const SubHero = () => {
             <p className="text-sm sm:text-base pb-6 sm:mb-8 text-[#a5a5a5]">
               {content[activeIndex].description2}
             </p>
-            <a
+            <span
               className="mb-10 text-Blue_Primary"
-              href={content[activeIndex]?.linkHref}
+             onClick={handleForm}
             >
               {content[activeIndex]?.linkText} →
-            </a>
+            </span>
           </div>
           <div>
             <Image

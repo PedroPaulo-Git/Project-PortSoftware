@@ -221,7 +221,7 @@ export default function Example() {
               Vamos começar{" "}
               <span aria-hidden="true">
                 {" "}
-                <FaArrowRight className="mt-1" />
+                <FaArrowRight className="mt-0.5" />
               </span>
             </span>
           </div>
@@ -282,11 +282,24 @@ export default function Example() {
         </div>
       </div>
 
-      <SubHero />
+      <SubHero handleForm={handleForm} />
+      <span
+            onClick={handleForm}
+              className="cursor-pointer hover:scale-105 neon-button font-semibold text-gray-900 bg-blue-600 p-4 w-full flex justify-center items-center text-center gap-1"
+            >
+              Pronto para inovar? Vamos começar! {" "}
+              <span aria-hidden="true">
+                {" "}
+                <FaArrowRight className="mt-0" />
+              </span>
+            </span>
       <Tecnologias />
+      
       <SlideTecnologias />
+      
       <Portfolio />
-      <Footer />
+      
+      <Footer handleForm={handleForm}  />
     </div>
   );
 }

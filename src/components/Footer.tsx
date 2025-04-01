@@ -4,7 +4,7 @@ import FooterImage from "../assets/FooterImage.png";
 import SlideTecnologiasBottom from "./SlideTecnologiasBottom";
 import { FaInstagram, FaWhatsapp, FaEnvelope } from "react-icons/fa";
 
-const Footer = () => {
+const Footer = ({ handleForm }: { handleForm: () => void }) => {
   return (
     <div
       id="TRABALHE"
@@ -46,8 +46,7 @@ const Footer = () => {
               />
             </a>
             <a
-              href="https://wa.me/558182123705?text=Olá,%20já%20decidi!%20Quero%20contratar%20seus%20serviços.%20Podemos%20conversar? "
-              target="_blank"
+             onClick={handleForm}
               rel="noopener noreferrer"
             >
               <FaWhatsapp
