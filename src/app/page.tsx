@@ -21,6 +21,8 @@ import Portfolio from "@/components/Portfolio";
 import Footer from "@/components/Footer";
 import WhatsappButton from "@/components/WhatsappButton";
 
+import FormModal from "@/components/mod/FormModal";
+
 const navigation = [
   { name: "INICIO", href: "#INICIO" },
 
@@ -31,11 +33,19 @@ const navigation = [
 ];
 
 const outfit = Outfit({ subsets: ["latin"] });
+
+
 export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [isOpenModal, setIsOpenModal] = useState(false);
   const images = [Hero1, Hero2, Hero3, Hero4, Hero5];
   const extendedImages = [...images, ...images];
+
+
+  const handleForm = (()=>{
+    setIsOpenModal(true)
+  })
   // useEffect(() => {
   //   const interval = setInterval(() => {
   //     setCurrentImage((prevIndex) => (prevIndex + 1) % images.length);
@@ -59,7 +69,7 @@ export default function Example() {
     <div
       className={`${outfit.className} scroll-smooth bg-darkCustom  text-white overflow-x-hidden`}
     >
-      <WhatsappButton />
+      <WhatsappButton handleForm={handleForm} />
       <header className="absolute inset-x-0 top-0 z-50 border-b-[1px] border-[#1d1c1f] text-[#87858b] sm:px-20 ">
         <nav
           aria-label="Global"
@@ -92,20 +102,20 @@ export default function Example() {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-sm/6 font-semibold "
+                className="text-sm/6 font-semibold  hover:text-white "
               >
                 {item.name}
               </a>
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a
-              href="https://wa.me/558182123705?text=Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20seus%20servi%C3%A7os."
-              className="text-sm/6 font-semibold flex gap-4 items-center"
+            <span
+              onClick={handleForm}
+              className="text-sm/6 font-semibold flex gap-4 items-center cursor-pointer hover:text-white"
             >
               <FaBoltLightning className="text-Blue_Primary" /> SOLICITAR
               ORÇAMENTO
-            </a>
+            </span>
           </div>
         </nav>
         <Dialog
@@ -169,6 +179,9 @@ export default function Example() {
               className="relative left-[calc(50%-11rem)] aspect-1155/678 w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
             />
           </div>
+            {isOpenModal  && (
+              <FormModal open={isOpenModal} onClose={() => setIsOpenModal(false)}/>
+            )}
           <div className="max-w-2xl pt-24 sm:pt-40 lg:pt-48">
             <div className="sm:flex ">
               <div className="relative text-Blue_Primary font-semibold rounded-full py-1 text-xs sm:text-base ring-1 ring-gray-900/10 hover:ring-gray-900/20">
@@ -189,9 +202,8 @@ export default function Example() {
 
               <div className="hidden sm:flex mt-10 text-left ">
                 <a
-                  href="https://wa.me/558182123705?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20seus%20serviços!"
-                  target="_blank"
-                  className="text-xs sm:text-base text-grayCustom "
+                  href="#SOBRE"
+                  className="text-xs sm:text-base text-grayCustom  hover:text-white cursor-pointer"
                 >
                   <span aria-hidden="true"> ↓ </span>Continuar Explorando
                 </a>
@@ -202,16 +214,16 @@ export default function Example() {
             <h1 className="text-sm sm:text-xl mb-4 sm:mb-8 ">
               Fazemos a web diferente,todos os dias.
             </h1>
-            <a
-              href="https://wa.me/558182123705?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20seus%20serviços!"
-              className="neon-button font-semibold text-gray-900 bg-blue-600 p-4 w-full flex justify-center items-center text-center gap-1"
+            <span
+            onClick={handleForm}
+              className="cursor-pointer hover:scale-105 neon-button font-semibold text-gray-900 bg-blue-600 p-4 w-full flex justify-center items-center text-center gap-1"
             >
               Vamos começar{" "}
               <span aria-hidden="true">
                 {" "}
                 <FaArrowRight className="mt-1" />
               </span>
-            </a>
+            </span>
           </div>
 
           <div className="flex sm:hidden mt-10 text-left ">
