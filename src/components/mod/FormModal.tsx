@@ -68,18 +68,18 @@ export default function FormModal({ open, onClose }: FormModalProps) {
 
     // Caso seja válido, envia os dados para o Google Sheets
     try {
-      const response = await fetch("https://script.google.com/macros/s/AKfycbwJr4CDwT4ejjIsxpO46d9hD42tOmYoN5sVQYe_u6uk891cr-HGtatvL51zleF8J4cxIw/exec", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
-     
-        });
-    
-        // const result = await response.json();
-        // console.log(result);
-    // A resposta do Apps Script estará aqui
-    const result = await response.json();
-    console.log(result);  // Verifique a resposta
+      const response = await fetch("https://formspree.io/f/mpwpyzyy", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      const result = await response.json();
+      console.log(result);  // Verifique a resposta do Formspree
+  
+      console.log("Formulário enviado com sucesso!");
     console.log("Formulário enviado com sucesso!");
       }catch (error) {
         console.error("Erro ao enviar formulário:", error);
@@ -90,13 +90,13 @@ export default function FormModal({ open, onClose }: FormModalProps) {
 
     window.location.href = whatsappUrl;
   };
-
   return (
     <Dialog open={open} onOpenChange={onClose}>
       <DialogContent
-        aria-labelledby="dialog-title" // Aqui, estamos usando o id do título
-        aria-describedby="dialog-description" // E aqui, um id para a descrição (se houver)
-       className="bg-black border-gray-800 text-white rounded-lg">
+        aria-labelledby="dialog-title"
+        aria-describedby="dialog-description"
+        className="bg-black border-gray-800 text-white rounded-lg"
+      >
         <DialogHeader>
           <DialogTitle className="text-xl font-bold text-center">Fale Conosco</DialogTitle>
         </DialogHeader>
@@ -111,7 +111,7 @@ export default function FormModal({ open, onClose }: FormModalProps) {
             className="bg-gray-800 text-white border-gray-700"
           />
           {formSubmitted && errors.name && <span className="text-red-500 text-sm">{errors.name}</span>}
-
+  
           <Input
             type="email"
             name="email"
@@ -122,7 +122,7 @@ export default function FormModal({ open, onClose }: FormModalProps) {
             className="bg-gray-800 text-white border-gray-700"
           />
           {formSubmitted && errors.email && <span className="text-red-500 text-sm">{errors.email}</span>}
-
+  
           <Input
             type="tel"
             name="whatsapp"
@@ -133,7 +133,7 @@ export default function FormModal({ open, onClose }: FormModalProps) {
             className="bg-gray-800 text-white border-gray-700"
           />
           {formSubmitted && errors.whatsapp && <span className="text-red-500 text-sm">{errors.whatsapp}</span>}
-
+  
           <Button
             type="submit"
             className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg"
@@ -144,4 +144,5 @@ export default function FormModal({ open, onClose }: FormModalProps) {
       </DialogContent>
     </Dialog>
   );
+  
 }
