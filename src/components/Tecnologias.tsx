@@ -12,49 +12,42 @@ import postgresqlLogo from "../assets/postgres.png";
 const Tecnologias = () => {
   const features = [
     {
-      name: "Interfaces Dinâmicas",
-      description:
-        "JavaScript permite criar interfaces interativas e fluidas para melhor experiência do usuário.",
+      name: "Experiência Visual Cativante",
+      description: "Sites modernos e envolventes que prendem a atenção do visitante.",
       icon: jsLogo,
     },
     {
-      name: "Código Seguro",
-      description:
-        "TypeScript reduz erros e melhora a manutenção, tornando o software mais confiável.",
+      name: "Mais Segurança e Estabilidade",
+      description: "Código confiável para evitar erros e manter tudo funcionando bem.",
       icon: tsLogo,
     },
     {
-      name: "Alta Performance",
-      description:
-        "Node.js garante processamento rápido e escalabilidade para aplicações robustas.",
+      name: "Velocidade Que Impressiona",
+      description: "Carregamento rápido e sem travamentos para uma navegação fluida.",
       icon: nodeLogo,
     },
     {
-      name: "SEO e Velocidade",
-      description:
-        "Next.js otimiza a aplicação para carregar rapidamente e melhorar a visibilidade online.",
+      name: "Apareça no Google",
+      description: "Otimização para ser encontrado facilmente e atrair mais clientes.",
       icon: nextLogo,
     },
     {
-      name: "Banco de Dados Seguro",
-      description:
-        "PostgreSQL garante integridade, segurança e eficiência no armazenamento de dados.",
+      name: "Segurança Máxima",
+      description: "Proteção total para seus dados e dos seus clientes.",
       icon: postgresqlLogo,
     },
     {
-      name: "Flexibilidade e Simplicidade",
-      description:
-        "Vue.js é leve e intuitivo, tornando o desenvolvimento rápido e eficiente.",
+      name: "Desenvolvimento Ágil",
+      description: "Soluções rápidas e eficientes sem complicação.",
       icon: vueLogo,
     },
-
     {
-      name: "Desenvolvimento Ágil",
-      description:
-        "React permite a criação de componentes reutilizáveis, acelerando o desenvolvimento.",
+      name: "Tecnologia de Alto Padrão",
+      description: "Sites modernos, intuitivos e fáceis de usar.",
       icon: reactLogo,
     },
   ];
+  
 
   return (
     <div id="TECNOLOGIAS" className="bg-[#f0efeb]  pb-20">

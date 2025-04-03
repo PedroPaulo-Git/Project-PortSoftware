@@ -47,43 +47,44 @@ const SubHero = ({ handleForm }: { handleForm: () => void }) => {
 
   const content = [
     {
-      title: "Transforme suas ideias",
-      subtitle: "Transforme suas ideias em aplicativos de sucesso.",
+      title: "Transforme suas ideias em realidade",
+      subtitle: "Crie seu site, landing page ou aplicativo do jeito que precisa.",
       description1:
-        "Desenvolvemos aplicativos móveis que atendem às necessidades do seu negócio, com foco na experiência do usuário e performance.",
+        "Desenvolvemos soluções digitais sob medida para você, seja um site profissional, uma landing page otimizada ou um aplicativo funcional e intuitivo.",
       description2:
-        "Nosso time de desenvolvimento cria apps intuitivos e robustos que ajudam sua empresa a atingir novos patamares de sucesso no mercado digital.",
-      linkText: "Veja como podemos criar seu app",
+        "Nossa equipe foca em design moderno, performance e usabilidade para garantir que sua presença digital se destaque e gere resultados.",
+      linkText: "Veja como podemos criar seu projeto",
       linkHref:
-        "https://wa.me/558182123705?text=Olá,%20quero%20saber%20mais%20sobre%20desenvolvimento%20de%20aplicativos!",
+        "https://wa.me/558182123705?text=Olá,%20quero%20saber%20mais%20sobre%20desenvolvimento%20de%20sites%20e%20aplicativos!",
       image: mySubHeroPng3,
     },
     {
-      title: "Transforme sua presença digital com um site profissional",
-      subtitle: "Destaque sua marca com um site moderno e eficiente.",
+      title: "Tenha um site que trabalha por você",
+      subtitle: "Destaque-se com uma presença digital forte e profissional.",
       description1:
-        "A PortSoftware desenvolve sites personalizados, otimizados para performance e totalmente responsivos, garantindo uma experiência fluida para seus visitantes.",
+        "Criamos sites e landing pages personalizadas para profissionais autônomos, criadores de conteúdo, freelancers e qualquer pessoa que precise de um espaço online eficiente.",
       description2:
-        "Criamos soluções digitais sob medida para seu negócio, combinando design inovador e funcionalidades avançadas para potencializar sua presença online.",
-      linkText: "Veja como podemos criar seu site ideal",
+        "Combinamos design estratégico e funcionalidades inteligentes para atrair visitantes e converter clientes, independentemente do seu nicho.",
+      linkText: "Veja como criar seu site ideal",
       linkHref:
-        "https://wa.me/558182123705?text=Olá,%20quero%20um%20site%20profissional%20para%20minha%20empresa!",
+        "https://wa.me/558182123705?text=Olá,%20quero%20um%20site%20ou%20landing%20page%20para%20meu%20projeto!",
       image: mySubHeroPng2,
     },
     {
-      title: "Como podemos ajudar sua empresa",
+      title: "Precisa de algo no digital? A gente faz acontecer",
       subtitle:
-        "Como podemos ajudar sua empresa com nossos serviços de software.",
+        "Desde sites e landing pages até automações e sistemas personalizados.",
       description1:
-        "Na PortSoftware, desenvolvemos soluções personalizadas para cada cliente. Oferecemos serviços de desenvolvimento de software, automação de processos e muito mais.",
+        "Desenvolvemos soluções digitais para atender exatamente o que você precisa. Seja para vender, apresentar seu trabalho ou automatizar processos, nós temos a solução.",
       description2:
-        "Com nosso time altamente qualificado, garantimos que sua empresa tenha as ferramentas necessárias para crescer e se destacar no mercado competitivo.",
-      linkText: "Saiba mais sobre nossos serviços",
+        "Nosso foco é entregar um serviço que realmente faça a diferença para você, seja um freelancer, influenciador, profissional liberal ou dono de um pequeno negócio.",
+      linkText: "Saiba como podemos te ajudar",
       linkHref:
-        "https://wa.me/558182123705?text=Olá,%20quero%20saber%20mais%20sobre%20seus%20serviços%20de%20software!",
+        "https://wa.me/558182123705?text=Olá,%20quero%20saber%20como%20vocês%20podem%20me%20ajudar%20no%20digital!",
       image: mySubHeroPng,
     },
   ];
+  
 
   return (
     <div

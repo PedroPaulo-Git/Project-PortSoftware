@@ -44,7 +44,8 @@ export default function Example() {
 
 
   const handleForm = (()=>{
-    setIsOpenModal(true)
+    // setIsOpenModal(true)
+    window.open("https://wa.me/558182123705?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20seus%20serviços%20de%20desenvolvimento.%20Pode%20me%20ajudar?", "_blank");
   })
   // useEffect(() => {
   //   const interval = setInterval(() => {
@@ -189,12 +190,13 @@ export default function Example() {
               </div>
             </div>
             <div className="">
-              <h1 className=" text-[42px] leading-none tracking-tight  lg:text-5xl font-normal text-balance  sm:text-7xl">
-                Desenvolvimento personalizado{" "}
-                <span className="sm:text-7xl  lg:text-5xl ">
-                  para sua empresa crescer
-                </span>
-              </h1>
+            <h1 className="text-[42px] leading-none tracking-tight lg:text-5xl font-normal text-balance sm:text-7xl">
+  Desenvolvimento personalizado{" "}
+  <span className="sm:text-7xl lg:text-5xl">
+    para você crescer no digital
+  </span>
+</h1>
+
               {/* <p className="mt-8 text-lg font-medium text-pretty  sm:text-xl/8">
               Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
               fugiat veniam occaecat.
